@@ -1,0 +1,176 @@
+/* Estilos para el navbar y el footer */
+.navbar, .footer {
+    width: 100%;
+    background-color: #0c387a; /* Color del navbar y footer */
+    padding: 5px 0;
+}
+
+/* Aplica el color blanco a los enlaces y textos del navbar */
+.navbar a, .navbar .navbar-text, .navbar .nav-link {
+    color: #ffffff !important; /* Fuerza el color blanco */
+}
+
+.navbar a:hover, .navbar .nav-link:hover {
+    color: #c8fafd !important; /* Color al hacer hover */
+}
+
+.navbar .nav-link {
+    font-size: 1.1rem; /* Tamaño del texto */
+    margin-right: 15px; /* Espaciado entre enlaces */
+}
+
+/* Asegura que todos los elementos dentro del footer sean blancos */
+.footer i, .footer span, .footer a {
+    color: #fff; /* Aplica el color blanco a todos los elementos hijos del footer */
+}
+
+/* Estilo para la imagen del logo */
+.logo-img {
+    max-width: 120px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Fondo general */
+.fondo-aqua {
+    background-color: #deeaf7; /* Color de fondo */
+}
+
+/* Estilo para las tarjetas */
+.div-card-menu {
+    background-color: white; /* Fondo blanco */
+    width: 160px; /* Ancho fijo */
+    height: 145px; /* Alto fijo */
+    border-radius: 15px; /* Esquinas redondeadas */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra gris */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px;
+}
+
+.div-card-menu i {
+    font-size: 2.5rem; /* Tamaño del icono */
+}
+
+.div-card-menu b {
+    font-size: 1.0rem; /* Tamaño del texto en negrita */
+    margin-bottom: 5px; /* Espacio debajo del texto en negrita */
+}
+
+.div-card-menu span {
+    font-size: 0.9rem; /* Tamaño del texto normal */
+}
+
+/* Estilo para los círculos */
+.div-card-circule {
+    background-color: white; /* Fondo blanco */
+    width: 50px; /* Ancho fijo */
+    height: 50px; /* Alto fijo */
+    border-radius: 100px; /* Esquinas redondeadas */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra gris */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px;
+}
+
+.div-card-circule i {
+    font-size: 1.5rem; /* Tamaño del icono */
+    text-shadow: 0 0 2px rgb(0, 0, 0); /* Sombra del icono */
+}
+
+/* Hover para las tarjetas y círculos */
+.div-card-circule:hover, .div-card-menu:hover {
+    background-color: #c8fafd; /* Color de fondo al pasar el cursor */
+    cursor: pointer; /* Estilo del cursor al pasar el cursor */
+}
+
+/* Estilo para las tarjetas de filtro */
+.div-card-filtro {
+    background-color: white; /* Fondo blanco */
+    width: 260px; /* Ancho fijo */
+    height: 740px; /* Alto fijo */
+    border-radius: 15px; /* Esquinas redondeadas */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra gris */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px;
+}
+
+/* Estilos para enlaces de filtros */
+.filtro-calificacion {
+    color: #05b2b8; /* Color del enlace */
+    text-decoration: none;
+}
+
+.filtro-calificacion:hover {
+    color: #000000; /* Color al pasar el cursor */
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.filtro-precio {
+    color: #000000; /* Color del enlace */
+    text-decoration: none;
+}
+
+.filtro-precio:hover {
+    color: #05b2b8; /* Color al pasar el cursor */
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Estilos para el switch personalizado */
+.custom-switch .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #05b2b8; /* Color para el switch activado */
+    border-color: #05b2b8;
+}
+
+.custom-switch .custom-control-input:checked ~ .custom-control-label::after {
+    background-color: #fff; /* Color blanco para el círculo del switch activado */
+}
+
+.custom-switch .custom-control-label::before {
+    background-color: #dee2e6; /* Color para el switch desactivado */
+}
+
+.custom-switch .custom-control-label::after {
+    background-color: #fff; /* Color para el círculo del switch desactivado */
+}
+
+/* Estilo de borde para las imágenes */
+.img-bordered {
+    border: 10px solid #ffffff;
+    border-radius: 10px;
+}
+
+/* Estilo para los botones personalizados */
+.btn-new-carrito {
+    background-color: #9DE7EA;
+    border-radius: 100px; /* Esquinas redondeadas */
+    transition: border-color 0.1s ease;
+}
+
+.btn-new-carrito:hover {
+    background-color: #fff;
+    border-color: #000;
+}
+
+/* Estilo para la paginación */
+.pagination .page-item.active .page-link {
+    background-color: #05b2b8; /* Fondo aqua para el elemento activo */
+    border-color: #05b2b8; /* Borde aqua para el elemento activo */
+    color: #fff; /* Texto en blanco para el activo */
+}
+
+.pagination .page-item .page-link:hover:not(.active) {
+    border-color: #05b2b8; /* Borde aqua al hacer hover */
+}
+
+.pagination .page-link {
+    color: #000; /* Color del texto de los enlaces */
+}

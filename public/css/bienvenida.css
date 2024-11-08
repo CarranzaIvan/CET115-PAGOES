@@ -1,0 +1,53 @@
+/* ------------------------------------------------------------- */
+/* |    TITULO PRINCIPAL DE LA VENTANA DE SERVICIOS: VER       | */
+/* ------------------------------------------------------------- */
+/* Estilo para el título principal */
+.colorEstandarTexto {
+    color: #0D5C75;
+}
+
+.header-section {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+/* ------------------------------------------------------------- */
+/* |     BOTON PRINCIPAR DE RESERVAR CENTRADO CON IMAGEN       | */
+/* ------------------------------------------------------------- */
+
+.btn-reservar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #0D5C75;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+.btn-reservar:hover {
+    background-color: #0b4d62;
+    color: white;
+}
+
+/* ------------------------------------------------------------- */
+/* |      TARJETAS DE BENEFICIOS DEL CARWASH A DOMICILIO       | */
+/* ------------------------------------------------------------- */
+.header-image {
+    width: 100%;
+    height: auto;
+}
+
+.beneficio-item img {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 10px; /* Espacio debajo de la imagen */
+    display: block; /* Asegura que el bloque esté alineado correctamente */
+    margin-left: auto; /* Alinea la imagen a la izquierda */
+    margin-right: auto; /* Alinea la imagen a la derecha */
+}
+
