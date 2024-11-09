@@ -24,7 +24,7 @@
                         
                         <div class="form-group mb-4">
                             <label class="font-weight-bold" style="color: #555;">Contraseña</label>
-                            <input type="password" name="password" class="form-control" placeholder="Contraseña" required style="border-radius: 8px; border: 1px solid #ced4da;">
+                            <input minlength="8" type="password" name="password" class="form-control" placeholder="Contraseña" required style="border-radius: 8px; border: 1px solid #ced4da;">
                         </div>
                         
                         <div class="text-center mt-4">
@@ -61,7 +61,7 @@
             icon: 'error',
             title: 'Error',
             text: "{{ $errors->first() }}",
-            showConfirmButton: true,
+            showConfirmButton: false,
         });
     });
 </script>
@@ -85,7 +85,7 @@
         icon: 'error',
         title: 'Error',
         text: "{{ session('error') }}",
-        showConfirmButton: true
+        showConfirmButton: false
     });
 </script>
 @endif
@@ -97,7 +97,7 @@
             icon: 'error',
             title: 'Error',
             text: "{{ $errors->first() }}",
-            showConfirmButton: true,
+            showConfirmButton: false,
         });
     });
 </script>
