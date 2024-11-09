@@ -1,0 +1,81 @@
+/* ------------------------------------------------------------- */
+/* |    TITULO PRINCIPAL DE LA VENTANA DE SERVICIOS: VER       | */
+/* ------------------------------------------------------------- */
+
+/* Estilo para el título principal */
+.colorEstandarTexto {
+    color: #0D5C75;
+}
+
+/* ------------------------------------------------------------- */
+/* |            BOTÓN DE AGREGAR AL CARRITO UN SERVICIO        | */
+/* ------------------------------------------------------------- */
+
+/* Botón de agregar al carrito */
+.btn-agregar {
+    background-color: #0D5C75;
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+
+.btn-agregar:hover {
+    background-color: #0b4d62;
+    color: white;
+}
+
+/* ------------------------------------------------------------- */
+/* |      CARTA DE DEMOSTRACION DE SERVICIOS AL CLIENTE        | */
+/* ------------------------------------------------------------- */
+
+/* Cartas de servicios */
+.card {
+    border-radius: 15px;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.servicio-titulo {
+    font-size: 1.5rem; /* Ajusta el tamaño del título */
+}
+
+.servicio-precio {
+    font-size: 1.25rem; /* Ajusta el tamaño del precio */
+}
+
+.servicio-descripcion {
+    font-size: 1rem; /* Ajusta el tamaño de la descripción */
+}
+
+/* ------------------------------------------------------------- */
+/* |        BOTÓN DE VER CARRITO PESPECTIVA DEL CLIENTE        | */
+/* ------------------------------------------------------------- */
+
+/* Botón Ver Carrito */
+.btnVerCarrito, .btnEditarServicio {
+    background-color: aliceblue; /* Color de fondo inicial */
+    color: black; /* Color del texto */
+    border: 0.5px solid black; /* Borde negro */
+    transition: background-color 0.3s, color 0.3s; /* Transición suave */
+}
+
+/* Efecto al pasar el mouse */
+.btnVerCarrito:hover, .btnEditarServicio:hover {
+    background-color: black; /* Cambia el fondo a negro al pasar el mouse */
+    color: white; /* Cambia el color del texto a blanco */
+}
+
+.textarea-fixed {
+    width: 100%; /* O el tamaño que desees */
+    height: 150px; /* Altura fija */
+    resize: none; /* Evitar el redimensionamiento */
+}
+
+.img-servicio {
+    width: 100%;
+    height: 50px; /* O el tamaño que prefieras */
+    object-fit: cover;
+}
