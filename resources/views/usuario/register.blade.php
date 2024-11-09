@@ -1,70 +1,78 @@
 @extends('layout.app')
 
 @section('content')
-<link href="{{asset('templates/xhtml/css/style.css')}}" rel="stylesheet">
-<div class="authincation d-flex align-items-center justify-content-center" style="height: 97vh;">
+<div class="d-flex align-items-center justify-content-center" style="min-height: 90vh;">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-12">
-                <div class="authincation-content">
-                    <div class="row no-gutters">
-                        <div class="col-md-5 d-none d-md-flex align-items-center justify-content-center pl-5">
-                            <img src="{{ asset('images/pagomovil.png') }}" alt="Register Image" class="img-fluid mb-4">
-                        </div>
-                        <div class="col-md-7">
-                            <div class="auth-form">
-                                <h3 class="text-center mb-4">Registro de Usuario</h3>
-                                <form method="POST" action="{{ route('usuario.register') }}" id="registerForm">
-                                    @csrf
+            <div class="col-md-8 col-lg-8">
+                <div class="authincation-content p-5 shadow-lg rounded bg-white">
+                    <!-- Logo en la parte superior centrado -->
+                    <div class="text-center mb-4">
+                        <img src="{{ asset('images/pagomovil.png') }}" alt="Register Image" class="img-fluid" style="width: 120px; height: auto;">
+                    </div>
 
-                                    <div class="form-group">
-                                        <label for="nombre">Nombre Completo</label>
-                                        <input type="text" class="form-control" id="nombre" name="nombre_completo" required>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="direccion">Dirección</label>
-                                                <input type="text" class="form-control" id="direccion" name="direccion" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="telefono">Teléfono</label>
-                                                <input type="text" class="form-control" id="telefono" name="telefono" required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="email">Correo Electrónico</label>
-                                        <input type="email" class="form-control" id="email" name="correo" required>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="password">Contraseña</label>
-                                                <input type="password" class="form-control" id="password" name="password" required minlength="8">
-                                                <small class="form-text text-muted">La contraseña debe tener al menos 8 caracteres.</small>
-                                                <small id="passwordError" class="text-danger" style="display: none;">Las contraseñas no coinciden.</small>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="password_confirmation">Confirmar Contraseña</label>
-                                                <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" required>
-                                            </div>
-                                        </div>
-                                    </div>
+                    <h4 class="text-center mb-4 font-weight-bold" style="color: #0056b3;">Registro de Usuario</h4>
 
-                                    <div class="text-center">
-                                        <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
-                                    </div>
-                                </form>
-                                <div class="new-account mt-3 text-center">
-                                    <p>¿Ya tienes cuenta? <a class="text-primary" href="{{ route('login.form') }}">Iniciar sesión</a></p>
+                    <!-- Formulario de Registro -->
+                    <form method="POST" action="{{ route('usuario.register') }}" id="registerForm">
+                        @csrf
+
+                        <div class="row">
+
+                            <div class="col-md-6 mb-3">
+                                <div class="form-group mb-3">
+                                    <label for="nombre" class="font-weight-bold" style="color: #555;">Nombre Completo</label>
+                                    <input type="text" class="form-control" id="nombre" name="nombre_completo" required style="border-radius: 8px; border: 1px solid #ced4da;">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <div class="form-group">
+                                    <label for="telefono" class="font-weight-bold" style="color: #555;">Teléfono</label>
+                                    <input type="text" class="form-control" id="telefono" name="telefono" required style="border-radius: 8px; border: 1px solid #ced4da;">
                                 </div>
                             </div>
                         </div>
+
+                        <div class="row">
+
+                            <div class="col-md-6 mb-3">
+                                <div class="form-group">
+                                    <label for="direccion" class="font-weight-bold" style="color: #555;">Dirección</label>
+                                    <input type="text" class="form-control" id="direccion" name="direccion" required style="border-radius: 8px; border: 1px solid #ced4da;">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <div class="form-group mb-3">
+                                    <label for="email" class="font-weight-bold" style="color: #555;">Correo Electrónico</label>
+                                    <input type="email" class="form-control" id="email" name="correo" required style="border-radius: 8px; border: 1px solid #ced4da;">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <div class="form-group">
+                                    <label for="password" class="font-weight-bold" style="color: #555;">Contraseña</label>
+                                    <input type="password" class="form-control" id="password" name="password" required minlength="8" style="border-radius: 8px; border: 1px solid #ced4da;">
+                                    <small class="form-text text-muted">Debe tener al menos 8 caracteres.</small>
+                                    <small id="passwordError" class="text-danger" style="display: none;">Las contraseñas no coinciden.</small>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <div class="form-group">
+                                    <label for="password_confirmation" class="font-weight-bold" style="color: #555;">Confirmar Contraseña</label>
+                                    <input type="password" class="form-control" minlength="8" id="password_confirmation" name="password_confirmation" required style="border-radius: 8px; border: 1px solid #ced4da;">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-4">
+                            <button type="submit" class="btn btn-primary btn-block" style="border-radius: 8px; background-color: #0056b3; border: none;">Registrarse</button>
+                        </div>
+                    </form>
+
+                    <div class="new-account mt-4 text-center">
+                        <p>¿Ya tienes cuenta? <a class="text-primary font-weight-bold" href="{{ route('login.form') }}" style="text-decoration: none;">Iniciar sesión</a></p>
                     </div>
                 </div>
             </div>
@@ -80,7 +88,7 @@
         const passwordError = $('#passwordError');
 
         form.on('submit', function(e) {
-            e.preventDefault(); // Previene el envío normal del formulario
+            e.preventDefault();
 
             if (passwordInput.val() !== confirmPasswordInput.val()) {
                 passwordError.show();
