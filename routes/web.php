@@ -12,6 +12,10 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BotController;
 use App\Http\Controllers\PasswordResetController;
 
+// Rutas de autenticación doble factor
+Route::get('/verify-otp', [UsuarioController::class, 'showVerifyOTPForm'])->name('verify-otp-form');
+Route::post('/verify-otp', [UsuarioController::class, 'verifyOTP'])->name('verify-otp');
+// Rutas de recuperación de contraseña
 Route::get('password/request', [PasswordResetController::class, 'showRequestForm'])->name('password.request');
 Route::post('password/email', [PasswordResetController::class, 'sendResetLink'])->name('password.email');
 Route::get('password/reset/{token}', [PasswordResetController::class, 'showResetForm'])->name('password.reset');

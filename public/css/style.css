@@ -1,3 +1,19 @@
+/* Estilos para mantener el fondo transparente en el menú desplegable */
+.dropdown-menu-custom {
+    background-color: #0c387a; /* Color de fondo del menú */
+    color: white;
+}
+
+.dropdown-menu-custom .dropdown-item {
+    color: white;
+}
+
+/* Evita el cambio de fondo en hover */
+.dropdown-menu-custom .dropdown-item:hover {
+    background-color: transparent !important; /* Fondo transparente en hover */
+    color: #b5c4f7; /* Color del texto en hover */
+}
+
 /* Estilos para el navbar y el footer */
 .navbar, .footer {
     width: 100%;
@@ -11,7 +27,7 @@
 }
 
 .navbar a:hover, .navbar .nav-link:hover {
-    color: #c8fafd !important; /* Color al hacer hover */
+    color: #bbcff0 !important; /* Color al hacer hover */
 }
 
 .navbar .nav-link {

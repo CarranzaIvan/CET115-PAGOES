@@ -22,84 +22,81 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!--Estilo independiente-->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    
+
     <!-- Otros enlaces -->
     @if(View::hasSection('custom_css'))
-        @yield('custom_css')
+    @yield('custom_css')
     @endif
-    
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://sandbox.paypal.com/sdk/js?client-id={{ env('PAYPAL_CLIENT_ID') }}"></script>
 </head>
 
 <body class="fondo-aqua">
-<nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="{{route('inicio')}}">
-            <img src="{{ asset('images/pagomovil.png') }}" alt="Logo" height="50">
-            
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('inicio')}}">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('servicios')}}">Servicios</a>
-                </li>
-                <!--<li class="nav-item">
-                    <a class="nav-link" href="{{ route('registrar_cita') }}">Registro de citas</a>
-                </li>-->
-                @auth
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('seguimiento') }}">Mis Citas</a>
-                </li>
-                @endauth
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('verPreguntas')}}">Preguntas frecuentes</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('verTerminos')}}">Terminos & condiciones</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav ml-auto">
-                @guest
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login.form') }}">Iniciar Sesión</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('usuario.register.form') }}">Registrarse</a>
-                </li>
-                @else
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">
-                        {{ Auth::user()->nombre_completo }}
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown" style="background-color: #17a2b8; color: white;">
-                        <!-- Mostrar el panel solo si el usuario es admin -->
-                        @if (Auth::user()->id_rol == 1)
-                        <a class="dropdown-item text-white" href="{{ route('dashboard') }}">
-                            <i class="fas fa-cogs mr-2"></i>Panel Administrativo
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{route('inicio')}}">
+                <img src="{{ asset('images/pagomovil.png') }}" alt="Logo" height="50">
+
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('inicio')}}">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('servicios')}}">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('verPreguntas')}}">Preguntas frecuentes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('verTerminos')}}">Terminos & condiciones</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    @guest
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('login.form') }}">Iniciar Sesión</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('usuario.register.form') }}">Registrarse</a>
+                    </li>
+                    @else
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">
+                            {{ Auth::user()->nombre_completo }}
                         </a>
-                        <div class="dropdown-divider"></div>
-                        @endif
-                        <a class="dropdown-item text-white" href="{{ route('logout') }}"
-                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                            <i class="fas fa-sign-out-alt mr-2"></i>Cerrar Sesión
-                        </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-                    </div>
-                </li>
-                @endauth
-            </ul>
+                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-custom" aria-labelledby="userDropdown">
+                            @if (Auth::user()->id_rol == 1)
+                            <li>
+                                <a class="dropdown-item" href="{{ route('dashboard') }}">
+                                    <i class="fas fa-cogs me-2"></i>Panel Administrativo
+                                </a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            @endif
+                            <li>
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    <i class="fas fa-sign-out-alt me-2"></i>Cerrar Sesión
+                                </a>
+                            </li>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </ul>
+                    </li>
+
+                    @endauth
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
 
 
