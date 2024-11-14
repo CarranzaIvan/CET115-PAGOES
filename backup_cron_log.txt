@@ -1,0 +1,8 @@
+/home/azureuser/CET115-PAGOES/backup_db.sh: line 10: docker-compose: command not found
+Backup realizado: /home/azureuser/CET115-PAGOES/backups/pagomovil_es_backup_20241113_163801.sql
+/home/azureuser/CET115-PAGOES/backup_db.sh: line 10: docker-compose: command not found
+Backup realizado: /home/azureuser/CET115-PAGOES/backups/pagomovil_es_backup_20241113_165401.sql
+/home/azureuser/CET115-PAGOES/backup_db.sh: line 10: docker-compose: command not found
+Backup realizado: /home/azureuser/CET115-PAGOES/backups/pagomovil_es_backup_20241113_170701.sql
+/home/azureuser/CET115-PAGOES/backup_db.sh: line 10: docker-compose: command not found
+Backup realizado: /home/azureuser/CET115-PAGOES/backups/pagomovil_es_backup_20241114_020001.sql

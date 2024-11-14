@@ -38,7 +38,7 @@
 
 @push('custom_js')
     <script src="{{ asset('js/carrito.js') }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
     <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
     <!-- Include Bootstrap JS (para los toasts) -->
