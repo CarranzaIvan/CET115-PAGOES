@@ -54,6 +54,7 @@ Route::get('/',[HomeController::class, 'welcome'])->name('inicio'); // Ver inici
 Route::get('/terminos',[HomeController::class, 'verTerminos'])->name('verTerminos'); // Ver terminos y condiciones
 Route::get('/chatbot',[HomeController::class, 'verChatbot'])->name('verChatbot'); // Ver terminos y condiciones
 Route::get('/preguntas',[HomeController::class, 'verPreguntas'])->name('verPreguntas'); // Ver terminos y condiciones
+Route::get('services', [HomeController::class, 'verServicios'])->name('verServicios');
 
 // Rutas de servicio
 Route::get('/servicios',[ServicioController::class, 'verServicios'])->name('servicios'); // Ver servicios
@@ -101,6 +102,7 @@ Route::delete('dashboard/promociones/{id}', [PromocionController::class, 'destro
 Route::get('dashboard/promociones/{id}', [PromocionController::class, 'show'])->name('promociones.show');
 
 Route::post('/stripe-payment', [PaymentController::class, 'stripePayment']);
+Route::post('/btc-payment', [PaymentController::class, 'openNodePayment'])->name('payment.opennode');
 Route::post('/paypal-payment', [PaymentController::class, 'payPalPayment'])->name('payment.paypal');
 Route::post('/crypto-payment-callback', [PaymentController::class, 'cryptoPaymentCallback'])->name('payment.crypto.callback');
 Route::get('/payment-return', [PaymentController::class, 'paymentReturn'])->name('payment.return');

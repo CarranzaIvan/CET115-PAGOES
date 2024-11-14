@@ -25,10 +25,16 @@ class HomeController extends Controller
         return view('chatbot');
     }
 
+    public function verServicios()
+    {
+        return view('services');
+    }
+
     // Vísta de Preguntas Frecuentes
     public function verPreguntas()
     {
         $preguntas = Preguntas::all();
         return view('preguntas', compact('preguntas'));
     }
+    
 }

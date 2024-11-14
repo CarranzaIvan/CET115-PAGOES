@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
-    <link rel="icon" type="image/png" href="{{ asset('images/pagomovil.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('images/pagomovil_LOGO.png') }}">
 
     <!--LIBRERIAS DE DISEÑO-->
     <!-- Google Font: Source Sans Pro -->
@@ -47,9 +47,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('inicio')}}">Inicio</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="{{route('servicios')}}">Servicios</a>
+                    </li> -->
+                    @auth
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('verServicios')}}">Servicios</a>
                     </li>
+                    @endauth
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('verPreguntas')}}">Preguntas frecuentes</a>
                     </li>
@@ -66,6 +71,11 @@
                         <a class="nav-link" href="{{ route('usuario.register.form') }}">Registrarse</a>
                     </li>
                     @else
+                    <li class="nav-item">
+                        <span class="nav-link">
+                            <i class="fas fa-wallet me-2"></i>Saldo: ${{ Auth::user()->wallet->saldo }}
+                        </span>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">
                             {{ Auth::user()->nombre_completo }}
@@ -110,7 +120,7 @@
 
     <footer class="footer d-flex justify-content-between align-items-center mt-5 py-2 my-0 fixed-bottom">
         <div class="col-md-4 d-flex align-items-center">
-            <span class="mb-3 mb-md-0 text-white font-weight-bold">© 2024 Shine&Go, Todos los derechos reservados.</span>
+            <span class="mb-3 mb-md-0 text-white font-weight-bold">© 2024 PagoMovilES, Todos los derechos reservados.</span>
         </div>
 
         <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
