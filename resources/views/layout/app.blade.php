@@ -120,7 +120,7 @@
 
     <footer class="footer d-flex justify-content-between align-items-center mt-5 py-2 my-0 fixed-bottom">
         <div class="col-md-4 d-flex align-items-center">
-            <span class="mb-3 mb-md-0 text-white font-weight-bold">© 2024 Shine&Go, Todos los derechos reservados.</span>
+            <span class="mb-3 mb-md-0 text-white font-weight-bold">© 2024 PagoMovilES, Todos los derechos reservados.</span>
         </div>
 
         <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
