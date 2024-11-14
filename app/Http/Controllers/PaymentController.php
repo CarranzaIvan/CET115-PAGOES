@@ -6,14 +6,17 @@ use Illuminate\Http\Request;
 use Stripe\Stripe;
 use Stripe\PaymentIntent;
 use Exception;
+use Illuminate\Support\Facades\Log;
 use App\Models\Citas\Cita;
+use App\Models\Usuario;
+use App\Models\Wallet;
 
 class PaymentController extends Controller
 {
 
     public function stripePayment(Request $request)
     {
-        Stripe::setApiKey(env('STRIPE_SECRET'));
+        Stripe::setApiKey('sk_test_51QBjVvP7vtejcYNuwyT2TCtIKYowS2TJS9ZLWGx39j0AvQNp3OpTHR35LLisAxF1jiq2dk8TMV7WsLzlaKW4ae2b00T0M88Mnq');
         try {
             $paymentIntent = PaymentIntent::create([
                 'amount' => $request->total_a_pagar * 100, // Convertir a centavos
@@ -30,10 +33,10 @@ class PaymentController extends Controller
                     'payment_intent_client_secret' => $paymentIntent->client_secret
                 ]);
             } else if ($paymentIntent->status == 'succeeded') {
-                // Actualizar el estado de la cita
-                $this->actualizarCita($request->cita_id);
+                // Actualizar el saldo del usuario
+                $this->actualizarSaldo($request->user_id, $request->total_a_pagar);
                 // Añadir mensaje de éxito a la sesión
-                session()->flash('success', '¡Cita registrada con éxito!');
+                session()->flash('success', '¡Tu saldo ha sido actualizado con éxito!');
                 return response()->json(['success' => true]);
             } else {
                 return response()->json(['error' => 'Invalid PaymentIntent status']);
@@ -52,6 +55,18 @@ class PaymentController extends Controller
         } catch (Exception $e) {
             return response()->json(['error' => $e->getMessage()]);
         }
+    }
+
+    //Pago con OpenNode
+    public function openNodePayment(Request $request)
+    {
+        $id_usuario = $request->id_usuario;
+        $monto = $request->monto;
+
+        $this->actualizarSaldo($id_usuario, $monto);
+        session()->flash('success', '¡Tu saldo ha sido actualizado con éxito!');
+        return response()->json(['success' => true]);
+
     }
 
     // Método para manejar el callback de pagos de criptomonedas
@@ -85,13 +100,14 @@ class PaymentController extends Controller
 
     public function paymentReturn()
     {
-        return view('registrar_cita');
+        return view('services');
     }
 
-    private function actualizarCita($cita_id)
+    private function actualizarSaldo($id_user, $monto)
     {
-        $cita = Cita::find($cita_id);
-        $cita->pagado = 1;
-        $cita->save();
+        $usuario = Usuario::find($id_user);
+        $wallet = Wallet::where('id_usuario', $usuario->id_usuario)->first();
+        $wallet->saldo += $monto;
+        $wallet->save();
     }
 }
