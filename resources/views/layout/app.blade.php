@@ -114,8 +114,8 @@
         </div>
 
         <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-            <li class="ms-3 mr-2"><i class="bi bi-facebook"></i></li>
-            <li class="ms-3 mr-2"><i class="bi bi-instagram"></i></li>
+            <li class="ms-3 mr-2"> <a href="https://www.facebook.com/share/72X7qNrhomSRXj34/"><i class="bi bi-facebook"></i></a> </li>
+            <li class="ms-3 mr-2"> <a href="https://www.instagram.com/pagomoviles?igsh=MXZ0bzh5ZWZvZHd1ZQ=="> <i class="bi bi-instagram"></i></a></li>
             <li class="ms-3 mr-2"><i class="bi bi-twitter-x"></i></li>
         </ul>
     </footer>
