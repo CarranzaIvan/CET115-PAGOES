@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Validator;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendOTP; // Vamos a crear el Mailable SendOTP en el siguiente paso.
+use App\Models\Wallet;
 use Illuminate\Support\Facades\Session; // Asegúrate de importar la clase Session
 use Illuminate\Support\Facades\Log;
 
@@ -36,13 +37,19 @@ class UsuarioController extends Controller
             return response()->json(['errors' => $validator->errors()], 422);
         }
 
-        Usuario::create([
+        $usuario = Usuario::create([
             'id_rol' => 2, // Ajusta según tu lógica
             'nombre_completo' => $request->nombre_completo,
             'correo' => $request->correo,
             'direccion' => $request->direccion,
             'telefono' => $request->telefono,
             'contraseña' => Hash::make($request->password),
+        ]);
+
+        //crear wallet
+        Wallet::create([
+            'id_usuario' => $usuario->id_usuario,
+            'saldo' => 0,
         ]);
 
         return response()->json(['success' => true, 'message' => 'Usuario registrado exitosamente. Por favor, inicia sesión.'], 200);

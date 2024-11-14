@@ -33,4 +33,9 @@ class Usuario extends Authenticatable
     {
         return $this->contraseña;
     }
+
+    public function wallet()
+    {
+        return $this->hasOne(Wallet::class, 'id_usuario', 'id_usuario');
+    }
 }
