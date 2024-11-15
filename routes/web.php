@@ -102,9 +102,11 @@ Route::delete('dashboard/promociones/{id}', [PromocionController::class, 'destro
 Route::get('dashboard/promociones/{id}', [PromocionController::class, 'show'])->name('promociones.show');
 
 Route::post('/stripe-payment', [PaymentController::class, 'stripePayment']);
+Route::post('/stripe-paymentServices', [PaymentController::class, 'stripePaymentService']);
 Route::post('/btc-payment', [PaymentController::class, 'openNodePayment'])->name('payment.opennode');
-Route::post('/paypal-payment', [PaymentController::class, 'payPalPayment'])->name('payment.paypal');
-Route::post('/crypto-payment-callback', [PaymentController::class, 'cryptoPaymentCallback'])->name('payment.crypto.callback');
+Route::post('/paymentWallet', [PaymentController::class, 'paymentWallet'])->name('payment.wallet');
 Route::get('/payment-return', [PaymentController::class, 'paymentReturn'])->name('payment.return');
+Route::post('/paymentOpt', [PaymentController::class, 'generateAndSendOTP'])->name('payment.otp');
+Route::post('/paymentOptVerify', [PaymentController::class, 'verifyOTP'])->name('payment.otp-verify');
 
 Route::post('/telegram/webhook', [BotController::class, 'handleWebhook']);
