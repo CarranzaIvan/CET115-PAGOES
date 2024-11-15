@@ -4,6 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Pago Móvil ES.">
+
+    <meta name="description" content="Pago Móvil ES es la plataforma de pagos electrónicos líder en El Salvador, permitiendo a PyMES y emprendedores aceptar pagos con tarjetas, criptomonedas y más, de manera rápida, segura y confiable. Transforma tus transacciones y mejora la experiencia de tus clientes con nuestra solución innovadora y soporte 24/7.">
+
     <title>@yield('title')</title>
     <link rel="icon" type="image/png" href="{{ asset('images/pagomovil_LOGO.png') }}">
 
