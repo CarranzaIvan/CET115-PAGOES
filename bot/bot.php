@@ -202,6 +202,9 @@ if (isset($updateArray["message"])) {
         $detalles = "Los detalles de tu pago son: \n Correo: " . $valores['correo'] . "\n Servicio: " . $valores['servicio'] . "\n Monto: " . $valores['monto'] . "\n\n Escanea el código QR para realizar tu pago.";
         //enviar la imagen
         sendPhoto($chatId, $detalles, $pathQr);
+
+        //eliminamos la imagen
+        unlink($pathQr);
         
     } else if ($message == "/cancelar") {
         $query = "DELETE FROM variables WHERE id = :chatId";
