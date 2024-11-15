@@ -4,6 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Pago Móvil ES.">
+
+    <meta name="description" content="Pago Móvil ES es la plataforma de pagos electrónicos líder en El Salvador, permitiendo a PyMES y emprendedores aceptar pagos con tarjetas, criptomonedas y más, de manera rápida, segura y confiable. Transforma tus transacciones y mejora la experiencia de tus clientes con nuestra solución innovadora y soporte 24/7.">
+
     <title>@yield('title')</title>
     <link rel="icon" type="image/png" href="{{ asset('images/pagomovil_LOGO.png') }}">
 
@@ -124,9 +128,9 @@
         </div>
 
         <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-            <li class="ms-3 mr-2"><i class="bi bi-facebook"></i></li>
-            <li class="ms-3 mr-2"><i class="bi bi-instagram"></i></li>
-            <li class="ms-3 mr-2"><i class="bi bi-twitter-x"></i></li>
+            <li class="ms-3 mr-2"> <a href="https://www.facebook.com/share/72X7qNrhomSRXj34/"><i class="bi bi-facebook"></i></a> </li>
+            <li class="ms-3 mr-2"> <a href="https://www.instagram.com/pagomoviles?igsh=MXZ0bzh5ZWZvZHd1ZQ=="> <i class="bi bi-instagram"></i></a></li>
+            <li class="ms-3 mr-2"> <a href="https://x.com/pago_es"><i class="bi bi-twitter-x"></i></a></li>
         </ul>
     </footer>
 
@@ -152,5 +156,19 @@
 </script>
 @endif
 
-
+<!-- Matomo -->
+<script>
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="https://pagoeslinepm.matomo.cloud/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.async=true; g.src='https://cdn.matomo.cloud/pagoeslinepm.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  <!-- End Matomo Code -->  
 </html>

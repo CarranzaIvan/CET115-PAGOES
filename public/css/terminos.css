@@ -1,0 +1,25 @@
+ol li {
+    position: relative;
+    padding-left: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+ol li::marker {
+    color: transparent;
+}
+
+ol li::before {
+    content: counter(list-item); /* Muestra el número del ítem */
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0c387a;
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+}
