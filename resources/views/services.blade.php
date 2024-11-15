@@ -167,14 +167,14 @@
                 </div>
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link active" id="tarjeta-tab" data-bs-toggle="tab" href="#tarjeta" role="tab" aria-controls="tarjeta" aria-selected="true"><i class="fas fa-credit-card"></i> Tarjeta</a>
+                        <a class="nav-link active" id="tarjeta-tab" data-bs-toggle="tab" href="#tab-tarjeta" role="tab" aria-controls="tab-tarjeta" aria-selected="true"><i class="fas fa-credit-card"></i> Tarjeta</a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="bitcoin-tab" data-bs-toggle="tab" href="#bitcoin" role="tab" aria-controls="bitcoin" aria-selected="false"><i class="fab fa-bitcoin"></i> Bitcoin</a>
+                        <a class="nav-link" id="bitcoin-tab" data-bs-toggle="tab" href="#tab-bitcoin" role="tab" aria-controls="tab-bitcoin" aria-selected="false"><i class="fab fa-bitcoin"></i> Bitcoin</a>
                     </li>
                 </ul>
                 <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="tarjeta" role="tabpanel" aria-labelledby="tarjeta-tab">
+                    <div class="tab-pane fade show active" id="tab-tarjeta" role="tabpanel" aria-labelledby="tarjeta-tab">
                         <form id="paymentStripe">
                             <div class="form-group mt-3">
                                 <label for="numeroTarjeta">Número de Tarjeta</label>
@@ -196,7 +196,7 @@
                             </div>
                         </form>
                     </div>
-                    <div class="tab-pane fade" id="bitcoin" role="tabpanel" aria-labelledby="bitcoin-tab">
+                    <div class="tab-pane fade" id="tab-bitcoin" role="tabpanel" aria-labelledby="bitcoin-tab">
                         <div id="bitcoin-error" role="alert" class="text-danger mt-2"></div>
                         <div class="form-group mt-3 text-center">
                             <button type="button" id="payBitcoin" class="btn btn-primary">Generar Pago</button>
@@ -211,6 +211,7 @@
         </div>
     </div>
 </div>
+<!--FIN DE MODAL PARA CARGAR SALDO-->
 <script>
     $('#solicitar_otp').on('click', function() {
         const monto = document.getElementById('montoServices').value;
